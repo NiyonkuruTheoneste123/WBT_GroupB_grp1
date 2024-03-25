@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Files </title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            background-color: lightgray;
+        }
+
+        #mainVideoContainer {
+            flex: 1;
+        }
+
+        #additionalVideos {
+            display: flex;
+            flex-direction: column;
+            flex: 0 0 auto;
+        }
+
+         #video-caption {
+            font-weight: bold;
+            background-color: yellow;
+        }
+
+        #controls {
+            margin-top: 10px;
+        }
+
+         .controls button {
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #comments {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        #commentList div {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+
+        #description {
+            margin-top: 20px;
+        }
+
+        #downloadShare {
+            margin-top: 20px;
+        }
+
+        #downloadLink,
+        #shareBtn {
+            padding: 8px 16px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #downloadLink:hover,
+        #shareBtn:hover {
+            background-color: #218838;
+        }
+
+        /* Additional video styles */
+        .additional-video {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<header style="font-family: 'Arial Rounded MT Bold'; font-size: 22px;">
+    <div style="display: flex; align-items: center;">
+        <div>
+            <img src="./image/123.png" width="200" height="100" alt="123">
+        </div>
+        <div style="display: flex; flex: 1;">
+            <div>
+                <var>
+                <a href="home.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="contact.html">CONTACT US</a>
+                <a href="parameter.html">PARAMETER</a>
+            </div></var>
+        </div>
+    </div>
+</header>
+<hr>
+<main>
+    <section >
+        <video width="800" height="420" controls>
+            <source src="./image/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>2m views/3years<br>
+            song name:Nibido (Official Video)<br>
+            Artist   :Christopher Muneza
+         </caption></address><br>
+
+       <div class="controls">
+    <button id="prev-btn">Previous</button>
+    <button id="play-pause-btn">Play</button>
+    <button id="next-btn">Next</button>
+
+</div>
+<div class="comments-section">
+    <textarea id="comment-input" placeholder="Add a comment"></textarea>
+    <button id="comment-btn">Comment</button>
+    <div id="comments-list"></div>
+</div>
+    </section>
+
+    <section>
+        <video width="400" height="180" controls>
+            <source src="./image/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>3.5m views/3months<br>
+            song name:JUGUMiLA<br>
+            Artist   :Dj Phil Peter feat Chriss Eazy & Kevin Kade
+         </caption></address><br>
+        
+        <video width="400" height="180" controls>
+            <source src="./image/Kivumbi King - Wait(Lyrics Video Visualizer) Ft. Axon.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>257k views/8months<br>
+            song name:Wait<br>
+            Artist   :Kivumbi King Ft. Axon
+        </caption></address><br>
+    
+
+        <video width="400" height="180" controls>
+            <source src="./image/video3.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>28m views/1year<br>
+            song name:FEEL<br>
+            Artist   :Davido
+        </caption></address><br>
+        
+
+        <video width="400" height="180" controls>
+            <source src="./image/video4.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>12m views/2years<br>
+            song name:Terminator Official_Video_(0).mp4<br>
+            Artist   :King_Promise_feat._Young_Jonn
+        </caption></address><br>
+        
+       <video width="400" height="180" controls>
+            <source src="./image/video5.mp4" type="video/mp4">
+            Your browser does not support the video tag
+        </video><br>
+        <caption>
+            <address>5m views/6years<br>
+            song name:Your_Nature_Official_Video_(0).mp4<br>
+            Artist   :_Kari_Jobe_____The_Belonging_Co
+        </caption></address><br>
+    </section>
+</main>
+<hr>
+<footer style="color: blue">
+    <center>UR CBE B BIT &copy; 2024 &reg; This is Group1 website</center>
+</footer>
+
+<script>
+// Get references to the video element and the control buttons
+const video = document.querySelector('video');
+const playPauseButton = document.getElementById('play-pause-btn');
+const prevButton = document.getElementById('prev-btn');
+const nextButton = document.getElementById('next-btn');
+
+// Define an array of video sources
+const videos = [
+    './image/video1.mp4',
+    './image/video2.mp4',
+    './image/video3.mp4',
+    './image/video4.mp4',
+    './image/video5.mp4',
+    './image/video1.mp4'
+];
+
+// Initialize the current video index
+let currentVideoIndex = 0;
+
+// Function to load the current video
+function loadCurrentVideo() {
+    video.src = videos[currentVideoIndex];
+    video.play();
+    playPauseButton.textContent = 'Pause';
+}
+
+// Play/pause button click event handler
+playPauseButton.addEventListener('click', function() {
+    if (video.paused) {
+        video.play();
+        playPauseButton.textContent = 'Pause';
+    } else {
+        video.pause();
+        playPauseButton.textContent = 'Play';
+    }
+});
+
+// Previous button click event handler
+prevButton.addEventListener('click', function() {
+    currentVideoIndex = (currentVideoIndex - 1 + videos.length) % videos.length;
+    loadCurrentVideo();
+});
+
+// Next button click event handler
+nextButton.addEventListener('click', function() {
+    currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+    loadCurrentVideo();
+});
+
+// Load the first video
+loadCurrentVideo();
+
+</script>
+</body>
+</html>

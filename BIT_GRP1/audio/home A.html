@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Player</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgray;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            background-color: lightgray;
+            padding: 10px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 80vh;
+            padding: 20px;
+        }
+
+        #main-audio {
+            flex: 5;
+            margin-right: 80px;
+        }
+
+        #side-audios {
+            flex: 0 0 30%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        audio {
+            margin-bottom: 10px;
+        }
+
+        .controls button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div>
+            <img src="./songs/nm.png" width="90" height="40" alt="nm">
+    </div>
+    <div>
+    <a href="home A.html">HOME</a>
+    <a href="About us.html">ABOUT US</a>
+    <a href="contact us.html">CONTACT US</a>
+    <a href="parameter.html">PARAMETER</a>
+</div>
+</header>
+<main>
+    <section id="main-audio">
+        <h2>listening now</h2>
+        <audio id="main-audio-player" controls>
+            <source src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio1.mp3">
+            Your browser does not support the audio tag
+        </audio><br>
+        <caption style="font-weight: bold; color: blueviolet;" id="main-audio-caption">
+            current playing song.mp3<br>
+         </caption>
+        <div class="controls">
+            <button id="prev-btn">Previous</button>
+            <button id="play-pause-btn">Play</button>
+            <button id="next-btn">Next</button>
+        </div>
+    </section>
+
+    <section id="side-audios">
+        <h2>Playlist</h2>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio2.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            222k listeners/month<br>
+            song name:audio2.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio3.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            12M listeners/month<br>
+            song name:audio3.mp3
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio4.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            50M listeners/month<br>
+            song name:audio4.mp3
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio5.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            30M listeners/month<br>
+            song name:audio5.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio6.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            45.3M listeners/month<br>
+            song name:audio6.mp3<br>
+         </caption>
+
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio7.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            222k listeners/month<br>
+            song name:audio7.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio8.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            10M listeners/month<br>
+            song name:audio8.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio9.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            49M listeners/month<br>
+            song name:audio9.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio3.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            20,9M listeners/month<br>
+            song name:audio3.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio7.mp3"controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            500K listeners/month<br>
+            song name:audio7.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio9.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            4OK listeners/month<br>
+            song name:audio9.mp3<br>
+         </caption>
+        <audio class="side-audio" src="C:\Users\user1\Desktop\BIT_GRP1\audio\songs\audio5.mp3" controls></audio>
+        <caption style="font-weight: bold; color: blueviolet;">
+            180k listeners/month<br>
+            song name:audio5.mp3<br>
+         </caption>
+         </section>
+</main>
+
+<script>
+
+    const mainAudioPlayer = document.getElementById('main-audio-player');
+    const sideAudios = document.querySelectorAll('.side-audio');
+    let currentAudioIndex = 0;
+
+    function loadAudio(index) {
+        mainAudioPlayer.src = sideAudios[index].src;
+        mainAudioPlayer.play();
+    }
+
+    function switchToAudio(index) {
+        currentAudioIndex = index;
+        loadAudio(index);
+    }
+    function updateCaption(index) {
+        const caption = sideAudios[index].nextElementSibling;
+        document.getElementById('main-audio-caption').innerHTML = caption.innerHTML;
+    }
+
+    function playPause() {
+        if (mainAudioPlayer.paused) {
+            mainAudioPlayer.play();
+        } else {
+            mainAudioPlayer.pause();
+        }
+    }
+
+    function nextAudio() {
+        currentAudioIndex = (currentAudioIndex + 1) % sideAudios.length;
+        switchToAudio(currentAudioIndex);
+    }
+
+    function prevAudio() {
+        currentAudioIndex = (currentAudioIndex - 1 + sideAudios.length) % sideAudios.length;
+        switchToAudio(currentAudioIndex);
+    }
+
+    mainAudioPlayer.addEventListener('ended', nextAudio);
+
+    document.getElementById('play-pause-btn').addEventListener('click', playPause);
+    document.getElementById('next-btn').addEventListener('click', nextAudio);
+    document.getElementById('prev-btn').addEventListener('click', prevAudio);
+</script>
+
+</body>
+</html>
